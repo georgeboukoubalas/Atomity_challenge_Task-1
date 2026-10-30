@@ -2,6 +2,7 @@ import json
 import os
 from pathlib import Path
 from pydantic import ValidationError
+from connector import SafeLiveConnector, ConnectorSecurityError
 
 from models import InputRecord
 from normaliser import normalize_and_deduplicate
@@ -59,6 +60,27 @@ def main():
         json.dump(output_data, f, indent=2)
         
     print(f"Exported processed records to {output_path}")
+
+    print("\n--- 5. Testing Optional Live Connector ---")
+    connector = SafeLiveConnector()
+    
+    # Test 1: Safe external URL
+    test_url = "https://example.com"
+    print(f"Fetching safe URL: {test_url}")
+    try:
+        html = connector.fetch(test_url)
+        print(f"Success! Downloaded {len(html)} characters.")
+    except ConnectorSecurityError as e:
+        print(f"Blocked: {e}")
+
+    # Test 2: Blocked internal network (SSRF Attempt)
+    dangerous_url = "http://127.0.0.1:8080/admin"
+    print(f"\nFetching dangerous URL: {dangerous_url}")
+    try:
+        html = connector.fetch(dangerous_url)
+        print("Success!")
+    except ConnectorSecurityError as e:
+        print(f"Blocked successfully: {e}")
 
 if __name__ == "__main__":
     main()
