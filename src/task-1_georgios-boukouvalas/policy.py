@@ -1,3 +1,5 @@
+from models import NormalizedRecord, Eligibility
+
 def apply_policies(record: NormalizedRecord) -> NormalizedRecord:
     # Rule 1: Primary sources are eligible
     if record.source_type == "primary":

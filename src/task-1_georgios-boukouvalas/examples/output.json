@@ -1,0 +1,63 @@
+[
+  {
+    "source_id": "src_001",
+    "canonical_url": "https://gov.agency.example/report-2023",
+    "publisher": "GovAgency",
+    "source_type": "primary",
+    "publication_date": "2023-10-01",
+    "event_date": null,
+    "discovery_lineage": [
+      "crawler_run_1",
+      "user_submission"
+    ],
+    "eligibility": "eligible",
+    "reason_codes": [
+      "VALID_PRIMARY_SOURCE"
+    ]
+  },
+  {
+    "source_id": "src_002",
+    "canonical_url": "https://competitor.example/blog/our-new-product",
+    "publisher": "CompetitorInc",
+    "source_type": "competitor_promo",
+    "publication_date": "2023-11-05",
+    "event_date": null,
+    "discovery_lineage": [
+      "rss_feed_A"
+    ],
+    "eligibility": "excluded",
+    "reason_codes": [
+      "COMPETITOR_PRODUCT_CLAIM"
+    ]
+  },
+  {
+    "source_id": "src_003",
+    "canonical_url": "https://competitor.example/industry-trends",
+    "publisher": "CompetitorInc",
+    "source_type": "competitor_generic",
+    "publication_date": "2023-11-10",
+    "event_date": null,
+    "discovery_lineage": [
+      "rss_feed_B"
+    ],
+    "eligibility": "verification_required",
+    "reason_codes": [
+      "COMPETITOR_GENERIC_NEEDS_INDEPENDENT_VERIFICATION"
+    ]
+  },
+  {
+    "source_id": "src_005",
+    "canonical_url": "https://news.example/article",
+    "publisher": "NewsCorp",
+    "source_type": "news",
+    "publication_date": null,
+    "event_date": null,
+    "discovery_lineage": [
+      "crawler_run_2"
+    ],
+    "eligibility": "excluded",
+    "reason_codes": [
+      "UNRECOGNIZED_SOURCE_TYPE"
+    ]
+  }
+]
