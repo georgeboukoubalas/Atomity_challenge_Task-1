@@ -1,0 +1,47 @@
+[
+  {
+    "id": "src_001",
+    "url": "https://gov.agency.example/report-2023",
+    "publisher": "GovAgency",
+    "source_type": "primary",
+    "publication_date": "2023-10-01",
+    "provenance": ["crawler_run_1"]
+  },
+  {
+    "id": "src_002",
+    "url": "https://competitor.example/blog/our-new-product",
+    "publisher": "CompetitorInc",
+    "source_type": "competitor_promo",
+    "publication_date": "2023-11-05",
+    "provenance": ["rss_feed_A"]
+  },
+  {
+    "id": "src_003",
+    "url": "https://competitor.example/industry-trends",
+    "publisher": "CompetitorInc",
+    "source_type": "competitor_generic",
+    "publication_date": "2023-11-10",
+    "provenance": ["rss_feed_B"]
+  },
+  {
+    "id": "src_004",
+    "url": "https://gov.agency.example/report-2023?utm=tracking",
+    "publisher": "GovAgency",
+    "source_type": "primary",
+    "publication_date": "2023-10-01",
+    "provenance": ["user_submission"]
+  },
+  {
+    "id": "src_005",
+    "url": "https://news.example/article",
+    "publisher": "NewsCorp",
+    "source_type": "news",
+    "publication_date": null,
+    "provenance": ["crawler_run_2"]
+  },
+  {
+    "id": "src_006",
+    "url": "not-a-valid-url",
+    "publisher": 12345
+  }
+]
